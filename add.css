@@ -1,0 +1,125 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #a2d2ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem; /* Set a base font size in rem */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    width: 20rem; /* Convert width to rem */
+    color: black;
+    border-radius: 1em;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    background-color: white;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    width: 20rem;
+    color: #9b2226;
+    border-radius: 1em;
+}
+
+.out {
+    font-size: 1.125rem;
+    padding: 0.625rem 1.25rem;
+    margin: 0.625rem; 
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; 
+}
+
+.out:hover {
+    background-color: #2980b9;
+}
+
+.out a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.out a:hover {
+    text-decoration: none; /* Remove underline on hover for normal link state */
+}
+
+#timer {
+    font-size: 1.25rem; /* Convert font size to rem */
+    margin-top: 1.25rem; /* Convert margin to rem */
+}
+
+#output1, #output2 {
+    font-size: 1.5rem; /* Convert font size to rem */
+    margin-top: 0.125rem; /* Convert margin to rem */
+}
+
+label {
+    font-size: 1.125rem; /* Convert font size to rem */
+    margin-top: 0.625rem; /* Convert margin to rem */
+    display: block;
+}
+
+#userInput {
+    font-size: 1rem; /* Convert font size to rem */
+    padding: 0.3125rem; /* Convert padding to rem */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* #calci, #startBtn {
+    font-size: 1.125rem; 
+    
+    
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+} */
+
+#calci:hover, #startBtn:hover {
+    background-color: #45a049;
+}
+
+#result {
+    font-size: 1.25rem; /* Convert font size to rem */
+    margin-top: 1.25rem; /* Convert margin to rem */
+    font-weight: bold;
+}
+button {
+    font-size: 1.125rem;
+    margin-top: 0.625rem; 
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.625rem 1.25rem; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}

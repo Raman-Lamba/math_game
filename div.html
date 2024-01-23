@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <button type="button" id="startBtn" class="button-28">Start Game</button>
+            <div id="timer">Timer: 30 seconds</div>
+            <div id="output1"></div>
+            <div id="cross">÷</div>
+            <div id="output2"></div>
+
+            <label for="userInput">Enter Your Answer</label>
+            <input type="number" id="userInput">
+            <button type="button" id="calci">Next</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    
+
+    <div class = "container">
+        <div class="card1">
+            <button class = "out" ><a href="index.html">Home</a></button>
+            <button type="button" id ="reset" class = "out">Restart</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('startBtn').addEventListener('click', startGame);
+            document.getElementById('calci').addEventListener('click', cal);
+            document.addEventListener('keypress', handleKeyPress);
+        });
+
+        let seconds = 30;
+        let timeInterval;
+        let score = 0;
+        let total = 0;
+
+        function startGame() {
+            generateRandomNumber1();
+            generateRandomNumber2();
+            document.getElementById('startBtn').disabled = true;
+            updateTimer();
+            startTimer();
+            document.getElementById('userInput').focus();
+        }
+
+        function startTimer() {
+            timeInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            seconds--;
+            document.getElementById('timer').innerHTML = `Timer: ${seconds} seconds`;
+            if (seconds == 0) {
+                clearInterval(timeInterval);
+                displayFinalScore();
+            }
+        }
+
+        function generateRandomNumber1() {
+            let randNum = Math.floor(Math.random() * 1000);
+            document.getElementById('output1').innerHTML = randNum;
+            console.log(randNum);
+        }
+
+        function generateRandomNumber2() {
+            let randNum = Math.floor(Math.random() * 100)+1;
+            document.getElementById('output2').innerHTML = randNum;
+            console.log(randNum);
+        }
+
+        function cal() {
+            total++;
+            let n1 = parseInt(document.getElementById('output1').innerHTML);
+            let n2 = parseInt(document.getElementById('output2').innerHTML);
+            let userInput = parseInt(document.getElementById('userInput').value);
+
+            if (isNaN(userInput)) {
+                alert("Please Enter a Valid Number");
+                return;
+            }
+
+            let res = n1 / n2;
+            res = Math.round(res*100)/100;
+            if (userInput == res) {
+                score++;
+                // document.getElementById('result').innerHTML = "Correct";
+            } else {
+                // document.getElementById('result').innerHTML = "Incorrect";
+            }
+
+            generateRandomNumber1();
+            generateRandomNumber2();
+
+            document.getElementById('userInput').value = "";
+            document.getElementById('userInput').focus();
+        }
+
+        function displayFinalScore() {
+            document.getElementById('result').innerHTML = `Your Final Score Is : ${score} out of ${total}`;
+        }
+
+        function handleKeyPress(event) {
+            let keyCode = event.keyCode ? event.keyCode : event.which;
+
+            if (keyCode === 13) {
+                cal();
+            }
+        }
+        document.getElementById("reset").onclick = function(){
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>
