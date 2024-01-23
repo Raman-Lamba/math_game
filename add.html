@@ -5,8 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplication</title>
+    <title>Addition</title>
     <link rel="stylesheet" href="add.css">
+    <style>
+        /* Dark mode styles */
+        .dark_mode {
+            background-color: #292b2c;
+            color: #fff;
+        }
+
+        .dark_mode .card {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .dark_mode .card1 {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .dark_mode .out {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .dark_mode .out:hover {
+            background-color: #233748;
+        }
+
+        .dark_mode a {
+            color: #fff;
+        }
+
+        .dark_mode a:hover {
+            color: #f0f0f0;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,7 +65,16 @@
             <button type="button" id ="reset" class = "out">Restart</button>
         </div>
     </div>
+    <button onclick="myFunction()">Toggle dark mode</button>
     <script>
+        function myFunction() {
+            let bodyElement = document.body;
+            bodyElement.classList.toggle("dark_mode");
+
+            // Select the container correctly
+            let containerElement = document.querySelector('.container');
+            containerElement.classList.toggle("dark_cont");
+        }
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('startBtn').addEventListener('click', startGame);
             document.getElementById('calci').addEventListener('click', cal);
