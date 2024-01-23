@@ -7,6 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Math Game</title>
+    <style>
+        /* Add dark mode styles */
+        .dark_mode {
+            background-color: #282c35;
+            color: #ffffff;
+        }
+
+        .dark_mode .card {
+            background-color: #39424e;
+            color: #ffffff;
+        }
+
+        /* Add styles for dark container */
+        .dark_cont {
+            background-color: #1c1e24;
+            color: white;
+        }
+        .dark_mode h1 {
+            color: #ffffff; /* Change this to your desired color */
+        }
+    </style>
 </head>
 
 <body>
@@ -21,6 +42,18 @@
             </ul>
         </div>
     </div>
+    <button onclick="myFunction()">Toggle dark mode</button>
+
+    <script>
+        function myFunction() {
+            let bodyElement = document.body;
+            bodyElement.classList.toggle("dark_mode");
+
+            // Select the container correctly
+            let containerElement = document.querySelector('.container');
+            containerElement.classList.toggle("dark_cont");
+        }
+    </script>
 </body>
 
 </html>
